@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100lvh;
+  display: grid;
+  background-color: #d3d3d3;
+  place-content: center;
+}
+
+/* webkit browsers - Chrome, Opera, Edge, Safari */
+[data-slider] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent; /* removes default background */
+  /* background: #dadada; changes color of default input track */
+  width: 300px;
+}
+
+/* range track - the lower background */
+[data-slider]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 40px;
+  cursor: grab;
+  background: #4caf50;
+  border-radius: 10px;
+}
+
+[data-slider]:active::-webkit-slider-runnable-track {
+  cursor: grabbing;
+}
+
+
+[data-slider]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  /* margin-top: -8px; half of thumb height - half of track height */
+  width: 50px;
+  height: 40px;
+  background: #ffffff;
+  /* border: 4px solid #4caf50; */
+  border-radius: 10px;
+  cursor: grab;
+  /* transition: background 0.3s ease; */
+}
+
+/* range track on firefox */
+[data-slider]::-moz-range-track {
+  width: 100%;
+  height: 40px;
+  cursor: grab;
+  background: #4caf50;
+  border-radius: 10px;
+}
+
+[data-slider]:active::-moz-range-track {
+  cursor: grabbing;
+}
+
+
+[data-slider]::-moz-range-thumb {
+  height: 40px; /* Set your desired thumb size */
+  width: 50px;
+  background: white; /* Set your desired thumb color */
+  border: none;
+  cursor: grab;
+  /* Firefox centers the thumb automatically, usually no margin-top needed */
+}
+
+[data-slider]:active::-moz-range-thumb {
+  cursor: grabbing;
+}
