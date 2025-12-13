@@ -110,6 +110,7 @@ label {
   border-radius: 14px;
   left: 0;
   top: 2px;
+  /* extra borders - z index on this overlaps the range track, without z index does not display on firefox */
   border-inline: 2px solid #e1e1e1;
   border-block: 1px solid #e1e1e1;
   height: 40px;
