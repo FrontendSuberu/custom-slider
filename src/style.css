@@ -110,7 +110,10 @@ label {
   border-radius: 14px;
   left: 0;
   top: 2px;
+  border-inline: 2px solid #e1e1e1;
+  border-block: 1px solid #e1e1e1;
   height: 40px;
+  z-index: 1;
 }
 
 [data-progress-bar]::before{
@@ -157,6 +160,7 @@ label {
 
 .moz-wrapper{
   width: 100%;
+  position: relative;
   height: 43px;
 }
 
@@ -168,7 +172,10 @@ label {
   background: transparent; /*Set your desired thumb color*/
   border: none;
   cursor: grab;
+  position: relative; /* allow z-index to take effect */
+  z-index: 0;
 }
+
 
 [data-slider]:active::-moz-range-thumb {
   cursor: grabbing;
