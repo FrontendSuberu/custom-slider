@@ -59,12 +59,11 @@ label {
   /* border-radius: 10px; */
 }
 
-[data-slider]:hover{
+[data-slider]:hover {
   cursor: grab;
-
 }
 
-[data-slider]:focus{
+[data-slider]:focus {
   cursor: grabbing;
 }
 
@@ -73,52 +72,46 @@ label {
   width: 100%;
   height: 40px;
   z-index: -1;
-  background: #e1e1e1;
+  background: transparent;
   border-radius: 10px;
 }
 
-
+.moz-wrapper::after {
+  content: "";
+  top: 1px;
+  z-index: -1;
+  left: 0;
+  position: absolute;
+  background: #e1e1e1;
+  width: 300px;
+  height: 40px;
+  border-radius: 14px;
+}
 
 [data-slider]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 15%;
   height: 40px;
-  /* background: gree; */
+  background: transarent;
   border-radius: 10px;
   z-index: 1000;
   position: relative;
   /* cursor: grab; */
 }
 
-/* when focused - change the border radius by the left to avoid visual mismatch */
-/* [data-slider]:focus::-webkit-slider-thumb {
-  border-radius: 10px;
-   border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-} */
-
 [data-progress-bar] {
-  /* background-color: red; */
   background: white;
   width: 15%;
-  /* border-top-left-radius: 10px; */
-  /* border-bottom-left-radius: 10px; */
-  /* background-color: red; */
   position: absolute;
-  /* border: 5px solid blu; */
   border-radius: 14px;
   left: 0;
   top: 2px;
-  /* extra borders - z index on this overlaps the range track, without z index does not display on firefox */
-  border-inline: 2px solid #e1e1e1;
-  border-block: 1px solid #e1e1e1;
   height: 40px;
-  z-index: 1;
 }
 
-[data-progress-bar]::before{
-  content: '';
+[data-progress-bar]::before {
+  content: "";
   position: absolute;
   right: 12px;
   top: 10px;
@@ -128,7 +121,7 @@ label {
   background-color: black;
 }
 
-.marker-dots{
+.marker-dots {
   position: absolute;
   display: flex;
   width: 100%;
@@ -138,7 +131,7 @@ label {
   gap: 80px;
 }
 
-.marker-dots div{
+.marker-dots div {
   width: 4px;
   height: 4px;
   border-radius: 50%;
@@ -150,7 +143,8 @@ label {
   width: 100%;
   height: 40px;
   cursor: grab;
-  background: #e1e1e1;
+  background: transparent;
+  /* background: #e1e1e1; */
   /* background: #e1e1e1; */
   border-radius: 10px;
 }
@@ -159,10 +153,11 @@ label {
   cursor: grabbing;
 }
 
-.moz-wrapper{
+.moz-wrapper {
   width: 100%;
   position: relative;
   height: 43px;
+  overflow: hidden;
 }
 
 [data-slider]::-moz-range-thumb {
@@ -170,20 +165,19 @@ label {
   width: 50px;
   -webkit-appearance: none;
   appearance: none;
-  background: transparent; /*Set your desired thumb color*/
+  background: transparent; /* Set your desired thumb color */
+  /* background: white; Set your desired thumb color */
   border: none;
   cursor: grab;
   position: relative; /* allow z-index to take effect */
   z-index: 0;
 }
 
-
 [data-slider]:active::-moz-range-thumb {
   cursor: grabbing;
 }
 
-
-.range-counter{
+.range-counter {
   position: absolute;
   bottom: 60px;
   right: 0;
